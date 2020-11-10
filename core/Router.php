@@ -118,12 +118,9 @@ class Router {
    * @return string
    */
   protected function renderOnlyView (?string $view, array $params): ?string {
-
     foreach ($params as $key => $value) $$key = $value;
-
     ob_start();
     require_once Core::$rootPath . "/src/views/{$view}.php";
-    
     return ob_get_clean();
   }
 }
